@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Developer dev = new PanelDeveloper("ООО КирпичСтрой");
+        Developer dev = new PanelDeveloper("Housestroy");
         House house2 = dev.Create();
 
-        dev = new WoodDeveloper("Частный застройщик");
+        dev = new WoodDeveloper("Investor");
         House house = dev.Create();
 
         Console.ReadLine();
     }
 }
-// абстрактный класс строительной компании
+//abstract developer class
 abstract class Developer
 {
     public string Name { get; set; }
@@ -26,10 +22,10 @@ abstract class Developer
     {
         Name = n;
     }
-    // фабричный метод
+    //factgory method
     abstract public House Create();
 }
-// строит панельные дома
+//builds panel houses
 class PanelDeveloper : Developer
 {
     public PanelDeveloper(string n) : base(n)
@@ -40,7 +36,7 @@ class PanelDeveloper : Developer
         return new PanelHouse();
     }
 }
-// строит деревянные дома
+//builds wooden houses
 class WoodDeveloper : Developer
 {
     public WoodDeveloper(string n) : base(n)
@@ -59,13 +55,13 @@ class PanelHouse : House
 {
     public PanelHouse()
     {
-        Console.WriteLine("Панельный дом построен");
+        Console.WriteLine("Panel house builded");
     }
 }
 class WoodHouse : House
 {
     public WoodHouse()
     {
-        Console.WriteLine("Деревянный дом построен");
+        Console.WriteLine("Wooden house builded");
     }
 }

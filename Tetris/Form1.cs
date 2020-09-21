@@ -100,7 +100,7 @@ namespace Tetris
                         }
                         else
                         {
-                            //pressedButton.Text = "Pase";
+                            //pressedButton.Text = "Pause";
                             timer1.Start();
                         }
                     break;

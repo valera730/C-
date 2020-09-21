@@ -233,7 +233,6 @@ namespace Tetris.Controllers
 
         public static void ShowPause()
         {
-            
         }
     }
 }

@@ -15,12 +15,19 @@ namespace Tetris
     public partial class Form1 : Form
     {
         string playerName;
-        
+
         public Form1()
         {
             InitializeComponent();
-            //if (!File.Exists(RecordsController.recordPath))
-                //File.Create(RecordsController.recordPath);
+            try
+            {
+                if (!File.Exists(RecordsController.recordPath))
+                    File.Create(RecordsController.recordPath);
+            } catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
             playerName = Microsoft.VisualBasic.Interaction.InputBox("Enter player name","Enter your name","New game");
             if(playerName == "")
             {
@@ -32,7 +39,7 @@ namespace Tetris
 
         public void Init()
         {
-            //RecordsController.ShowRecords(label3);
+            RecordsController.ShowRecords(labelRecord);
             this.Text = "Tetris: Current player - " + playerName;
             MapController.size = 25;
             MapController.score = 0;
@@ -49,6 +56,7 @@ namespace Tetris
 
             Invalidate();
         }
+
         private void keyFunc(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -120,13 +128,12 @@ namespace Tetris
             else
             {
                 MapController.Merge();
-                //MapController.SliceMap(label1,label2);
                 MapController.SliceMap(label1, label2, label3);
                 timer1.Interval = MapController.Interval;
                 MapController.currentShape.ResetShape(3,0);
                 if (MapController.Collide())
                 {
-                    //RecordsController.SaveRecords(playerName);
+                    RecordsController.SaveRecords(playerName);
                     MapController.ClearMap();
                     timer1.Tick -= new EventHandler(update);
                     timer1.Stop();

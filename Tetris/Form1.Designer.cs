@@ -40,6 +40,7 @@
             this.exitF10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.labelPause = new System.Windows.Forms.Label();
+            this.labelRecord = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,17 +130,27 @@
             this.labelPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPause.Location = new System.Drawing.Point(43, 172);
             this.labelPause.Name = "labelPause";
-            this.labelPause.Size = new System.Drawing.Size(215, 250);
+            this.labelPause.Size = new System.Drawing.Size(215, 73);
             this.labelPause.TabIndex = 4;
             this.labelPause.Text = "Pause";
             this.labelPause.Visible = false;
             this.labelPause.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // labelRecord
+            // 
+            this.labelRecord.AutoSize = true;
+            this.labelRecord.Location = new System.Drawing.Point(326, 279);
+            this.labelRecord.Name = "labelRecord";
+            this.labelRecord.Size = new System.Drawing.Size(35, 13);
+            this.labelRecord.TabIndex = 5;
+            this.labelRecord.Text = "label4";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.labelRecord);
             this.Controls.Add(this.labelPause);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -169,5 +180,6 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitF10ToolStripMenuItem;
         private System.Windows.Forms.Label labelPause;
+        private System.Windows.Forms.Label labelRecord;
     }
 }

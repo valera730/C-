@@ -10,7 +10,7 @@ namespace Tetris.Controllers
 {
     public static class RecordsController
     {
-        public static string recordPath = @"C:\recordsFile.txt";
+        public static string recordPath = @"C:\Valera\21.09.20\recordsFile.txt";
         public static void SaveRecords(string playerName)
         {
             List<string> recordsArray = new List<string>(LoadRecords());
@@ -35,7 +35,7 @@ namespace Tetris.Controllers
             return recordsArray;
         }
 
-        public static void ShowRecords(Label label3)
+        public static void ShowRecords(Label labelRecord)
         {
             List<string> recordsArray = new List<string>(LoadRecords());
 
@@ -55,13 +55,13 @@ namespace Tetris.Controllers
                 }
             }
 
-            label3.Text = "Records table";
+            labelRecord.Text = "Records table";
             foreach (var str in recordsArray)
             {
                 string[] args = str.Split('|');
 
-                label3.Text += "\n";
-                label3.Text += "Player " + args[0] + " : " + args[1];
+                labelRecord.Text += "\n";
+                labelRecord.Text += "Player " + args[0] + " record: " + args[1];
             }
         }
     }

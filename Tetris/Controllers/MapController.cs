@@ -99,7 +99,6 @@ namespace Tetris.Controllers
             }
         }
 
-        //public static void SliceMap(Label label1,Label label2)
         public static void SliceMap(Label label1,Label label2, Label label3)
         {
             int count = 0;
@@ -138,8 +137,6 @@ namespace Tetris.Controllers
 
             label1.Text = "Score: " + score;
             label2.Text = "Lines: " + linesRemoved;
-            //label3.Text = "Speed: " + Interval;
-            //label3.Text = "Speed: " + Decimal.Round(10 - Math.Round((decimal)Interval/100, 1));
             label3.Text = "Speed: " + Decimal.Round(10 - Decimal.Round(Interval/100, 1));
         }
 
@@ -232,6 +229,11 @@ namespace Tetris.Controllers
                     }
                 }
             }
+        }
+
+        public static void ShowPause()
+        {
+            
         }
     }
 }

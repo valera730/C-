@@ -34,10 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.паузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.начатьЗановоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.паузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitF10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
+            this.labelPause = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,11 +77,12 @@
             // менюToolStripMenuItem
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.паузаToolStripMenuItem,
             this.начатьЗановоToolStripMenuItem,
-            this.справкаToolStripMenuItem});
+            this.паузаToolStripMenuItem,
+            this.справкаToolStripMenuItem,
+            this.exitF10ToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.менюToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.менюToolStripMenuItem.Text = "Menu";
             // 
             // начатьЗановоToolStripMenuItem
@@ -103,6 +106,13 @@
             this.справкаToolStripMenuItem.Text = "Help";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.OnInfoPressed);
             // 
+            // exitF10ToolStripMenuItem
+            // 
+            this.exitF10ToolStripMenuItem.Name = "exitF10ToolStripMenuItem";
+            this.exitF10ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.exitF10ToolStripMenuItem.Text = "Exit (F10)";
+            this.exitF10ToolStripMenuItem.Click += new System.EventHandler(this.OnExitPressed);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -113,24 +123,38 @@
             this.label3.Text = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // labelPause
+            // 
+            this.labelPause.AutoSize = true;
+            this.labelPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPause.Location = new System.Drawing.Point(43, 172);
+            this.labelPause.Name = "labelPause";
+            this.labelPause.Size = new System.Drawing.Size(215, 250);
+            this.labelPause.TabIndex = 4;
+            this.labelPause.Text = "Pause";
+            this.labelPause.Visible = false;
+            this.labelPause.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.labelPause);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Tetris";
+            this.Name = "Form1";
             this.Text = "Tetris";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
@@ -143,5 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem начатьЗановоToolStripMenuItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitF10ToolStripMenuItem;
+        private System.Windows.Forms.Label labelPause;
     }
 }

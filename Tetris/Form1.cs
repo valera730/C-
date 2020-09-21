@@ -102,6 +102,11 @@ namespace Tetris
                         MapController.ClearMap();
                         Init();
                     break;
+
+                case Keys.Escape:
+                case Keys.F10:
+                    this.Close();
+                    break;
             }
         }
                 
@@ -147,11 +152,14 @@ namespace Tetris
             {
                 pressedButton.Text = "Continue";
                 timer1.Stop();
+                labelPause.Visible = true;
+                MapController.ShowPause();
             }
             else
             {
-                pressedButton.Text = "Pase";
+                pressedButton.Text = "Pause";
                 timer1.Start();
+                labelPause.Visible = false;
             }
         }
 
@@ -170,12 +178,26 @@ namespace Tetris
             infoString += "Key up to rotate the shape.\n";
             MessageBox.Show(infoString,"Help");
         }
+        private void OnExitPressed()
+        {
+            this.Close();
+        }
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void OnExitPressed(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Tetris
             {
                 playerName = "New player";
             }
-            this.KeyUp += new KeyEventHandler(keyFunc);
+            this.KeyDown += new KeyEventHandler(keyFunc);
             Init();
         }
 

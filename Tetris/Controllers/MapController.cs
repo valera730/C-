@@ -138,7 +138,9 @@ namespace Tetris.Controllers
 
             label1.Text = "Score: " + score;
             label2.Text = "Lines: " + linesRemoved;
-            label3.Text = "Speed: " + Interval;
+            //label3.Text = "Speed: " + Interval;
+            //label3.Text = "Speed: " + Decimal.Round(10 - Math.Round((decimal)Interval/100, 1));
+            label3.Text = "Speed: " + Decimal.Round(10 - Decimal.Round(Interval/100, 1));
         }
 
         public static bool IsIntersects()

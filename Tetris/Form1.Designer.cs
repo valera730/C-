@@ -80,27 +80,27 @@
             this.справкаToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.менюToolStripMenuItem.Text = "Меню";
-            // 
-            // паузаToolStripMenuItem
-            // 
-            this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
-            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.паузаToolStripMenuItem.Text = "Пауза";
-            this.паузаToolStripMenuItem.Click += new System.EventHandler(this.OnPauseButtonClick);
+            this.менюToolStripMenuItem.Text = "Menu";
             // 
             // начатьЗановоToolStripMenuItem
             // 
             this.начатьЗановоToolStripMenuItem.Name = "начатьЗановоToolStripMenuItem";
             this.начатьЗановоToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.начатьЗановоToolStripMenuItem.Text = "Начать заново";
+            this.начатьЗановоToolStripMenuItem.Text = "New game (F2)";
             this.начатьЗановоToolStripMenuItem.Click += new System.EventHandler(this.OnAgainButtonClick);
+            // 
+            // паузаToolStripMenuItem
+            // 
+            this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
+            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.паузаToolStripMenuItem.Text = "Pause";
+            this.паузаToolStripMenuItem.Click += new System.EventHandler(this.OnPauseButtonClick);
             // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Text = "Help";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.OnInfoPressed);
             // 
             // label3
@@ -124,16 +124,14 @@
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Tetris";
             this.Text = "Tetris";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
 
         private System.Windows.Forms.Timer timer1;

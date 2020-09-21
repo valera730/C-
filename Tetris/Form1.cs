@@ -38,7 +38,7 @@ namespace Tetris
             MapController.score = 0;
             MapController.linesRemoved = 0;
             MapController.currentShape = new Shape(3, 0);
-            MapController.Interval = 300;
+            MapController.Interval = 1000;
             label1.Text = "Score: " + MapController.score;
             label2.Text = "Lines: " + MapController.linesRemoved;
             label3.Text = "Speed: 0";
@@ -82,6 +82,25 @@ namespace Tetris
                         MapController.Merge();
                         Invalidate();
                     }
+                    break;
+
+                case Keys.P:
+                       if (timer1.Enabled)
+                       {
+                           //pressedButton.Text = "Continue";
+                           timer1.Stop();
+                        }
+                        else
+                        {
+                            //pressedButton.Text = "Pase";
+                            timer1.Start();
+                        }
+                    break;
+                    case Keys.F2:
+                        timer1.Tick -= new EventHandler(update);
+                        timer1.Stop();
+                        MapController.ClearMap();
+                        Init();
                     break;
             }
         }
